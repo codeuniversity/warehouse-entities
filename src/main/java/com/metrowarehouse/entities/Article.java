@@ -1,46 +1,32 @@
 package com.metrowarehouse.entities;
 
 import java.util.*;
-import javax.persistence.*;
-import org.hibernate.annotations.Type;
 
-@Entity
-@Table(name = "ARTICLES")
 public class Article {
-
-    @Id
-    @Column(name = "ARTICLE_ID", nullable = false)
-    @Type(type="uuid-char")
-    private UUID id;
-
-    @Column(name = "ARTICLE_NAME", nullable = false)
+    private String id;
     private String name;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "STORAGE_AREA", nullable = false)
-    private StorageArea storageArea;
-
-    @Column(name = "EAN", nullable = false)
+    private String storageArea;
     private String ean;
+    private String pickingLocation;
+    private String replenishmentLocation;
 
-    @OneToMany(fetch= FetchType.LAZY, mappedBy = "articleId", cascade = CascadeType.ALL)
-    private List<StorageLocation> storageLocations;
-
-    @OneToMany(fetch= FetchType.LAZY, mappedBy = "articleId", cascade = CascadeType.ALL)
-    private List<PickingLocation> pickingLocations;
-    
-    public Article() {}
-
-    public Article(UUID id, String name, StorageArea storageArea, String ean) {
-        this.id = id;
-        this.name = name;
-        this.storageArea = storageArea;
-        this.ean = ean;
-        storageLocations = new ArrayList<>();
-        pickingLocations = new ArrayList<>();
+    public String getPickingLocation() {
+        return pickingLocation;
     }
 
-    public UUID getId() {
+    public void setPickingLocation(String pickingLocation) {
+        this.pickingLocation = pickingLocation;
+    }
+
+    public String getReplenishmentLocation() {
+        return replenishmentLocation;
+    }
+
+    public void setReplenishmentLocation(String replenishmentLocation) {
+        this.replenishmentLocation = replenishmentLocation;
+    }
+
+    public String getId() {
         return id;
     }
 
@@ -48,7 +34,7 @@ public class Article {
         return name;
     }
 
-    public StorageArea getStorageArea() {
+    public String getStorageArea() {
         return storageArea;
     }
 
@@ -56,4 +42,50 @@ public class Article {
         return ean;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setStorageArea(String storageArea) {
+        this.storageArea = storageArea;
+    }
+
+    public void setEan(String ean) {
+        this.ean = ean;
+    }
+
+
+    @Override
+    public boolean equals(Object articleObj) {
+        if (articleObj == this) {
+            return true;
+        }
+
+        if(articleObj == null ) {
+            return false;
+        }
+
+        if (getClass() != articleObj.getClass()) {
+            return false;
+        }
+        Article article = (Article) articleObj;
+
+        return Objects.equals(id,article.id) && Objects.equals(name,article.name) && Objects.equals(storageArea,article.storageArea) && Objects.equals(ean,article.ean) && Objects.equals(replenishmentLocation,article.replenishmentLocation) && Objects.equals(pickingLocation,article.pickingLocation);
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", storageArea='" + storageArea + '\'' +
+                ", ean='" + ean + '\'' +
+                ", pickingLocation='" + pickingLocation + '\'' +
+                ", replenishmentLocation='" + replenishmentLocation + '\'' +
+                '}';
+    }
 }
