@@ -1,11 +1,13 @@
 package com.metrowarehouse.entities;
 
+import java.util.List;
+
 public class Order {
     private  String id;
     private String customerId;
     private  String deliveryDate;
     private  String creationTime;
-    private  OrderItem orderItems[];
+    private List<OrderArticle> orderArticles;
 
     public String getId() {
         return id;
@@ -39,12 +41,11 @@ public class Order {
         this.creationTime = creationTime;
     }
 
-    public OrderItem[] getOrderItems() {
-        return orderItems;
+    public List<OrderArticle> getOrderArticles() {
+        return orderArticles;
     }
 
-    public void setOrderItems(OrderItem[] orderItems) {
-        this.orderItems = orderItems;
+    public void setOrderArticles(List<OrderArticle> orderArticles) {
+        this.orderArticles = orderArticles;
     }
-
 }
