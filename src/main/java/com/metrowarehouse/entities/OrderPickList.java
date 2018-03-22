@@ -7,10 +7,10 @@ public class OrderPickList {
     private String customerId;
     private String orderId;
 
-    private List<OrderItem> chilledItems;
-    private List<OrderItem> deepFrozenItems;
-    private List<OrderItem> mainItems;
-    private List<OrderItem> dangerousItems;
+    private List<OrderArticle> chilledItems;
+    private List<OrderArticle> deepFrozenItems;
+    private List<OrderArticle> mainItems;
+    private List<OrderArticle> dangerousItems;
 
     public String getCustomerId() {
         return customerId;
@@ -28,35 +28,35 @@ public class OrderPickList {
         this.orderId = orderId;
     }
 
-    public List<OrderItem> getChilledItems() {
+    public List<OrderArticle> getChilledItems() {
         return chilledItems;
     }
 
-    public void setChilledItems(List<OrderItem> chilledItems) {
+    public void setChilledItems(List<OrderArticle> chilledItems) {
         this.chilledItems = chilledItems;
     }
 
-    public List<OrderItem> getDeepFrozenItems() {
+    public List<OrderArticle> getDeepFrozenItems() {
         return deepFrozenItems;
     }
 
-    public void setDeepFrozenItems(List<OrderItem> deepFrozenItems) {
+    public void setDeepFrozenItems(List<OrderArticle> deepFrozenItems) {
         this.deepFrozenItems = deepFrozenItems;
     }
 
-    public List<OrderItem> getMainItems() {
+    public List<OrderArticle> getMainItems() {
         return mainItems;
     }
 
-    public void setMainItems(List<OrderItem> mainItems) {
+    public void setMainItems(List<OrderArticle> mainItems) {
         this.mainItems = mainItems;
     }
 
-    public List<OrderItem> getDangerousItems() {
+    public List<OrderArticle> getDangerousItems() {
         return dangerousItems;
     }
 
-    public void setDangerousItems(List<OrderItem> dangerousItems) {
+    public void setDangerousItems(List<OrderArticle> dangerousItems) {
         this.dangerousItems = dangerousItems;
     }
 
