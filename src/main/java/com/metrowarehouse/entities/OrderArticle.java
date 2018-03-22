@@ -7,6 +7,7 @@ public class OrderArticle {
     private String name;
     private String storageArea;
     private String ean;
+    private int quantity;
 
     public String getId() {
         return id;
@@ -40,6 +41,14 @@ public class OrderArticle {
         this.ean = ean;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -52,7 +61,8 @@ public class OrderArticle {
         return Objects.equals(this.id, other.id)
                 && Objects.equals(this.name, other.name)
                 && Objects.equals(this.storageArea, other.storageArea)
-                && Objects.equals(this.ean, other.ean);
+                && Objects.equals(this.ean, other.ean)
+                && Objects.equals(this.quantity, other.quantity);
     }
 
     @Override
