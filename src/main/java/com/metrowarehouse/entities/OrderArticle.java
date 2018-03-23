@@ -9,6 +9,14 @@ public class OrderArticle {
     private String ean;
     private int quantity;
 
+    public OrderArticle(String id, String name, String storageArea, String ean, int quantity) {
+        this.id = id;
+        this.name = name;
+        this.storageArea = storageArea;
+        this.ean = ean;
+        this.quantity = quantity;
+    }
+
     public String getId() {
         return id;
     }
