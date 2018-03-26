@@ -5,11 +5,11 @@ import java.util.Objects;
 public class OrderArticle {
     private String id;
     private String name;
-    private String storageArea;
+    private StorageArea storageArea;
     private String ean;
     private int quantity;
 
-    public OrderArticle(String id, String name, String storageArea, String ean, int quantity) {
+    public OrderArticle(String id, String name, StorageArea storageArea, String ean, int quantity) {
         this.id = id;
         this.name = name;
         this.storageArea = storageArea;
@@ -25,7 +25,7 @@ public class OrderArticle {
         return name;
     }
 
-    public String getStorageArea() {
+    public StorageArea getStorageArea() {
         return storageArea;
     }
 
@@ -41,7 +41,7 @@ public class OrderArticle {
         this.name = name;
     }
 
-    public void setStorageArea(String storageArea) {
+    public void setStorageArea(StorageArea storageArea) {
         this.storageArea = storageArea;
     }
 
