@@ -4,7 +4,7 @@ public class ReplenishmentArticle extends OrderArticle {
     private String storageLocation;
     private String futurePickingLocation;
 
-    public ReplenishmentArticle(String id, String name, String storageArea, String ean, int quantity) {
+    public ReplenishmentArticle(String id, String name, StorageArea storageArea, String ean, int quantity) {
         super(id, name, storageArea, ean, quantity);
     }
 
