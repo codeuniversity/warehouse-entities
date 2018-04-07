@@ -73,13 +73,4 @@ public class OrderArticle {
                 && Objects.equals(this.quantity, other.quantity);
     }
 
-    @Override
-    public String toString() {
-        return "Article{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", storageArea='" + storageArea + '\'' +
-                ", ean='" + ean + '\'' +
-                '}';
-    }
 }
