@@ -1,5 +1,7 @@
 package com.metrowarehouse.entities;
 
+import java.util.Objects;
+
 public class ReplenishmentArticle extends OrderArticle {
     private String storageLocation;
     private String futurePickingLocation;
@@ -22,5 +24,23 @@ public class ReplenishmentArticle extends OrderArticle {
 
     public void setFuturePickingLocation(String futurePickingLocation) {
         this.futurePickingLocation = futurePickingLocation;
+    }
+
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        if (!super.equals(obj)) {
+            return false;
+        }
+        final ReplenishmentArticle other = (ReplenishmentArticle) obj;
+        return Objects.equals(this.storageLocation, other.storageLocation)
+                && Objects.equals(this.futurePickingLocation, other.futurePickingLocation);
     }
 }
