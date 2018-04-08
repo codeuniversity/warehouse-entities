@@ -69,26 +69,12 @@ public class OrderArticle {
         }
         final OrderArticle orderArticle = (OrderArticle) obj;
 
-
-         boolean isOrderArticle = Objects.equals(this.id, orderArticle.id)
+         return Objects.equals(this.id, orderArticle.id)
                 && Objects.equals(this.name, orderArticle.name)
                 && Objects.equals(this.storageArea, orderArticle.storageArea)
                 && Objects.equals(this.ean, orderArticle.ean)
                 && Objects.equals(this.quantity, orderArticle.quantity);
 
-         if((orderArticle instanceof ReplenishmentArticle) && (this instanceof ReplenishmentArticle)) {
-             ReplenishmentArticle replenishmentArticle = (ReplenishmentArticle) orderArticle;
-             ReplenishmentArticle thisReplenishmentArticle = (ReplenishmentArticle) this;
-
-             return isOrderArticle && Objects.equals(thisReplenishmentArticle,replenishmentArticle);
-         } else if((orderArticle instanceof PickingArticle) && (this instanceof PickingArticle)) {
-             PickingArticle pickingArticle = (PickingArticle) orderArticle;
-             PickingArticle thisPickingArticle = (PickingArticle) this;
-
-             return isOrderArticle && Objects.equals(pickingArticle,thisPickingArticle);
-         } else {
-             return isOrderArticle;
-         }
     }
 
 }

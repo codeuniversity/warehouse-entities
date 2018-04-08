@@ -36,9 +36,6 @@ public class ReplenishmentArticle extends OrderArticle {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        if (!super.equals(obj)) {
-            return false;
-        }
         final ReplenishmentArticle other = (ReplenishmentArticle) obj;
         return Objects.equals(this.storageLocation, other.storageLocation)
                 && Objects.equals(this.futurePickingLocation, other.futurePickingLocation);
