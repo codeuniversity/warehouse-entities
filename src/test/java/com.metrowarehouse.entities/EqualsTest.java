@@ -101,4 +101,6 @@ public class EqualsTest {
 
         return Arrays.asList(cokeArticle,cokeArticle2);
     }
+
+
 }

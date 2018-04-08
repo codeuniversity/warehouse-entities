@@ -50,7 +50,8 @@ public class CheckedAvailabilityOrders {
             return false;
         }
         final CheckedAvailabilityOrders other = (CheckedAvailabilityOrders) obj;
-        return Objects.equals(this.orderStockStatus, other.orderStockStatus)
-                && Objects.equals(this.orderArticles, other.orderArticles);
+        return Objects.equals(this.orderStockStatus, other.orderStockStatus) &&
+                (orderArticles.size() == other.getOrderArticles().size())
+                && orderArticles.containsAll(other.getOrderArticles()) && other.getOrderArticles().containsAll(orderArticles);
     }
 }
