@@ -10,13 +10,17 @@ public class OrderArticle {
     private StorageArea storageArea;
     private String ean;
     private int quantity;
-
+    
     public OrderArticle(String id, String name, StorageArea storageArea, String ean, int quantity) {
         this.id = id;
         this.name = name;
         this.storageArea = storageArea;
         this.ean = ean;
         this.quantity = quantity;
+    }
+    
+    //trying to fix jackson error
+    public OrderArticle(){
     }
 
     public String getId() {
