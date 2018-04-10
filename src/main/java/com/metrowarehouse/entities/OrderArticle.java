@@ -20,6 +20,7 @@ public class OrderArticle {
     }
     
     //trying to fix jackson error
+
     public OrderArticle(){
     }
 
