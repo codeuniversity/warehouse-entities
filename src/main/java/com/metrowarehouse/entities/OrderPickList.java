@@ -11,7 +11,7 @@ public class OrderPickList {
     private List<OrderArticle> deepFrozenItems;
     private List<OrderArticle> mainItems;
     private List<OrderArticle> dangerousItems;
-    private List<OrderArticle> replenishmentArticles;
+    private List<OrderArticle> replenishmentItems;
 
     public String getCustomerId() {
         return customerId;
@@ -61,12 +61,12 @@ public class OrderPickList {
         this.dangerousItems = dangerousItems;
     }
 
-    public List<OrderArticle> getReplenishmentArticles() {
-        return replenishmentArticles;
+    public List<OrderArticle> getReplenishmentItems() {
+        return replenishmentItems;
     }
 
-    public void setReplenishmentArticles(List<OrderArticle> replenishmentArticles) {
-        this.replenishmentArticles = replenishmentArticles;
+    public void setReplenishmentItems(List<OrderArticle> replenishmentItems) {
+        this.replenishmentItems = replenishmentItems;
     }
 
     @Override
@@ -80,7 +80,7 @@ public class OrderPickList {
                 Objects.equals(deepFrozenItems, that.deepFrozenItems) &&
                 Objects.equals(mainItems, that.mainItems) &&
                 Objects.equals(dangerousItems, that.dangerousItems) &&
-                Objects.equals(replenishmentArticles, that.replenishmentArticles);
+                Objects.equals(replenishmentItems, that.replenishmentItems);
     }
 
     @Override
@@ -92,7 +92,7 @@ public class OrderPickList {
                 ", deepFrozenItems=" + deepFrozenItems +
                 ", mainItems=" + mainItems +
                 ", dangerousItems=" + dangerousItems +
-                ", replenishmentArticles=" + replenishmentArticles +
+                ", replenishmentItems=" + replenishmentItems +
                 '}';
     }
 }
