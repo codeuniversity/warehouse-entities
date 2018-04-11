@@ -61,24 +61,26 @@ public class OrderPickList {
         this.dangerousItems = dangerousItems;
     }
 
+    public List<OrderArticle> getReplenishmentArticles() {
+        return replenishmentArticles;
+    }
+
+    public void setReplenishmentArticles(List<OrderArticle> replenishmentArticles) {
+        this.replenishmentArticles = replenishmentArticles;
+    }
+
     @Override
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-
-        if(obj == null ) {
-            return false;
-        }
-
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-
-        OrderPickList orderPickList = (OrderPickList) obj;
-
-        return Objects.equals(customerId,orderPickList.customerId) && Objects.equals(orderId,orderPickList.orderId) && Objects.equals(chilledItems,orderPickList.chilledItems)
-                && Objects.equals(mainItems,orderPickList.mainItems) && Objects.equals(deepFrozenItems,orderPickList.deepFrozenItems) && Objects.equals(dangerousItems,orderPickList.dangerousItems);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrderPickList that = (OrderPickList) o;
+        return Objects.equals(customerId, that.customerId) &&
+                Objects.equals(orderId, that.orderId) &&
+                Objects.equals(chilledItems, that.chilledItems) &&
+                Objects.equals(deepFrozenItems, that.deepFrozenItems) &&
+                Objects.equals(mainItems, that.mainItems) &&
+                Objects.equals(dangerousItems, that.dangerousItems) &&
+                Objects.equals(replenishmentArticles, that.replenishmentArticles);
     }
 
     @Override
@@ -90,6 +92,7 @@ public class OrderPickList {
                 ", deepFrozenItems=" + deepFrozenItems +
                 ", mainItems=" + mainItems +
                 ", dangerousItems=" + dangerousItems +
+                ", replenishmentArticles=" + replenishmentArticles +
                 '}';
     }
 }
