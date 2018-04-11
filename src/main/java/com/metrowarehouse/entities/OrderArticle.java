@@ -1,16 +1,21 @@
 package com.metrowarehouse.entities;
 
-import com.sun.org.apache.xpath.internal.operations.Or;
+
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import java.util.Objects;
 
+@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "type")
+@JsonSubTypes({ @Type(value = ReplenishmentArticle.class, name = "replenishment"), @Type(value = PickingArticle.class, name = "picking") })
 public class OrderArticle {
     private String id;
     private String name;
     private StorageArea storageArea;
     private String ean;
     private int quantity;
-    
+
     public OrderArticle(String id, String name, StorageArea storageArea, String ean, int quantity) {
         this.id = id;
         this.name = name;
@@ -18,7 +23,7 @@ public class OrderArticle {
         this.ean = ean;
         this.quantity = quantity;
     }
-    
+
     //trying to fix jackson error
 
     public OrderArticle(){
