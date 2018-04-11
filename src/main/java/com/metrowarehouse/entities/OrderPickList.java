@@ -11,6 +11,7 @@ public class OrderPickList {
     private List<OrderArticle> deepFrozenItems;
     private List<OrderArticle> mainItems;
     private List<OrderArticle> dangerousItems;
+    private List<OrderArticle> replenishmentArticles;
 
     public String getCustomerId() {
         return customerId;
