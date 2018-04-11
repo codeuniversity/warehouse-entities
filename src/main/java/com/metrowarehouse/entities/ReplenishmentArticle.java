@@ -1,12 +1,17 @@
 package com.metrowarehouse.entities;
 
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Objects;
 
 public class ReplenishmentArticle extends OrderArticle {
     private String storageLocation;
     private String futurePickingLocation;
 
-    public ReplenishmentArticle(String id, String name, StorageArea storageArea, String ean, int quantity) {
+    @JsonCreator
+    public ReplenishmentArticle(@JsonProperty("id") String id, @JsonProperty("name") String name, @JsonProperty("storageArea")StorageArea storageArea, @JsonProperty("ean") String ean, @JsonProperty("quantity") int quantity) {
         super(id, name, storageArea, ean, quantity);
     }
 
