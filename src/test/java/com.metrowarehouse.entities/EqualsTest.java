@@ -66,10 +66,10 @@ public class EqualsTest {
         PickingArticle cokeArticle2 = new PickingArticle(COKE_ID,"Coke",StorageArea.MAIN,"123",5);
         cokeArticle2.setPickingLocation("Picking-MAIN-1");
 
-        CheckedAvailabilityOrders checkedAvailabilityOrders1 = new CheckedAvailabilityOrders(Arrays.asList(cokeArticle,cokeArticle2),OrderStockStatus.Available);
-        CheckedAvailabilityOrders checkedAvailabilityOrders2 = new CheckedAvailabilityOrders(createListOfArticlesForCheckedAvailability(),OrderStockStatus.Available);
+        CheckingAvailabilityOrder checkingAvailabilityOrder1 = new CheckingAvailabilityOrder(Arrays.asList(cokeArticle,cokeArticle2),OrderStockStatus.Available);
+        CheckingAvailabilityOrder checkingAvailabilityOrder2 = new CheckingAvailabilityOrder(createListOfArticlesForCheckedAvailability(),OrderStockStatus.Available);
 
-        boolean equals = checkedAvailabilityOrders1.equals(checkedAvailabilityOrders2);
+        boolean equals = checkingAvailabilityOrder1.equals(checkingAvailabilityOrder2);
 
         assertEquals(true,equals);
 
@@ -83,10 +83,10 @@ public class EqualsTest {
         PickingArticle cokeArticle2 = new PickingArticle(COKE_ID,"Coke2",StorageArea.MAIN,"123",5);
         cokeArticle2.setPickingLocation("Picking-MAIN-1");
 
-        CheckedAvailabilityOrders checkedAvailabilityOrders1 = new CheckedAvailabilityOrders(Arrays.asList(cokeArticle,cokeArticle2),OrderStockStatus.Available);
-        CheckedAvailabilityOrders checkedAvailabilityOrders2 = new CheckedAvailabilityOrders(createListOfArticlesForCheckedAvailability(),OrderStockStatus.Available);
+        CheckingAvailabilityOrder checkingAvailabilityOrder1 = new CheckingAvailabilityOrder(Arrays.asList(cokeArticle,cokeArticle2),OrderStockStatus.Available);
+        CheckingAvailabilityOrder checkingAvailabilityOrder2 = new CheckingAvailabilityOrder(createListOfArticlesForCheckedAvailability(),OrderStockStatus.Available);
 
-        boolean equals = checkedAvailabilityOrders1.equals(checkedAvailabilityOrders2);
+        boolean equals = checkingAvailabilityOrder1.equals(checkingAvailabilityOrder2);
 
         assertEquals(false,equals);
 

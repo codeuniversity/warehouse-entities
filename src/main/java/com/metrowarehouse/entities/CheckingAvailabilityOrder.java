@@ -7,13 +7,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Objects;
 
-public class CheckedAvailabilityOrders {
+public class CheckingAvailabilityOrder {
     private OrderStockStatus orderStockStatus;
     private List<OrderArticle> orderArticles;
 
 
     @JsonCreator
-    public CheckedAvailabilityOrders(@JsonProperty("orderArticles") List<OrderArticle> orderarticles, @JsonProperty("orderStockStatus") OrderStockStatus orderStockStatus) {
+    public CheckingAvailabilityOrder(@JsonProperty("orderArticles") List<OrderArticle> orderarticles, @JsonProperty("orderStockStatus") OrderStockStatus orderStockStatus) {
         this.orderStockStatus = orderStockStatus;
         this.orderArticles = orderarticles;
     }
@@ -27,7 +27,7 @@ public class CheckedAvailabilityOrders {
     }
 
 
-    public CheckedAvailabilityOrders(List<OrderArticle> orderArticles) {
+    public CheckingAvailabilityOrder(List<OrderArticle> orderArticles) {
         this.orderArticles = orderArticles;
     }
 
@@ -49,7 +49,7 @@ public class CheckedAvailabilityOrders {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        final CheckedAvailabilityOrders other = (CheckedAvailabilityOrders) obj;
+        final CheckingAvailabilityOrder other = (CheckingAvailabilityOrder) obj;
         return Objects.equals(this.orderStockStatus, other.orderStockStatus) &&
                 (orderArticles.size() == other.getOrderArticles().size())
                 && orderArticles.containsAll(other.getOrderArticles()) && other.getOrderArticles().containsAll(orderArticles);
