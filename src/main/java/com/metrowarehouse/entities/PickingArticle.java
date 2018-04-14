@@ -8,6 +8,7 @@ import java.util.Objects;
 
 public class PickingArticle extends OrderArticle {
     private String pickingLocation;
+    private String replenishmentOrderId;
 
     @JsonCreator
     public PickingArticle(@JsonProperty("id") String id, @JsonProperty("name") String name, @JsonProperty("storageArea")StorageArea storageArea, @JsonProperty("ean") String ean, @JsonProperty("quantity") int quantity) {
@@ -23,6 +24,13 @@ public class PickingArticle extends OrderArticle {
     }
 
 
+    public String getReplenishmentOrderId() {
+        return replenishmentOrderId;
+    }
+
+    public void setReplenishmentOrderId(String replenishmentOrderId) {
+        this.replenishmentOrderId = replenishmentOrderId;
+    }
 
     @Override
     public boolean equals(Object obj) {
