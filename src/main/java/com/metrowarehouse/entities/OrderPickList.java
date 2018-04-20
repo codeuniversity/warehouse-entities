@@ -1,5 +1,8 @@
 package com.metrowarehouse.entities;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -7,11 +10,11 @@ public class OrderPickList {
     private String customerId;
     private String orderId;
 
-    private List<OrderArticle> chilledItems;
-    private List<OrderArticle> deepFrozenItems;
-    private List<OrderArticle> mainItems;
-    private List<OrderArticle> dangerousItems;
-    private List<OrderArticle> replenishmentItems;
+    private List<OrderArticle> chilledItems = new ArrayList<>();
+    private List<OrderArticle> deepFrozenItems = new ArrayList<>();
+    private List<OrderArticle> mainItems = new ArrayList<>();
+    private List<OrderArticle> dangerousItems = new ArrayList<>();
+    private List<OrderArticle> replenishmentItems = new ArrayList<>();
 
     public String getCustomerId() {
         return customerId;
