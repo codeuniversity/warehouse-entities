@@ -10,12 +10,16 @@ import java.util.Objects;
 public class CheckingAvailabilityOrder {
     private OrderStockStatus orderStockStatus;
     private List<OrderArticle> orderArticles;
+    private String customerId;
+    private String orderId;
 
 
     @JsonCreator
-    public CheckingAvailabilityOrder(@JsonProperty("orderArticles") List<OrderArticle> orderarticles, @JsonProperty("orderStockStatus") OrderStockStatus orderStockStatus) {
+    public CheckingAvailabilityOrder(@JsonProperty("orderArticles") List<OrderArticle> orderarticles, @JsonProperty("orderStockStatus") OrderStockStatus orderStockStatus, @JsonProperty("customerId") String customerId, @JsonProperty("orderId") String orderId) {
         this.orderStockStatus = orderStockStatus;
         this.orderArticles = orderarticles;
+        this.customerId = customerId;
+        this.orderId = orderId;
     }
 
     public OrderStockStatus getOrderStockStatus() {
@@ -40,6 +44,21 @@ public class CheckingAvailabilityOrder {
         this.orderArticles = orderArticles;
     }
 
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -52,6 +71,8 @@ public class CheckingAvailabilityOrder {
         final CheckingAvailabilityOrder other = (CheckingAvailabilityOrder) obj;
         return Objects.equals(this.orderStockStatus, other.orderStockStatus) &&
                 (orderArticles.size() == other.getOrderArticles().size())
-                && orderArticles.containsAll(other.getOrderArticles()) && other.getOrderArticles().containsAll(orderArticles);
+                && orderArticles.containsAll(other.getOrderArticles()) && other.getOrderArticles().containsAll(orderArticles) &&
+                Objects.equals(customerId, other.customerId) &&
+                Objects.equals(orderId, other.orderId);
     }
 }
